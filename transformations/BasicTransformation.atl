@@ -5,7 +5,7 @@ create OUT : MM from IN : MM;
 
 rule name {
 	from
-		input_name : input_element
+		input_name : 
 	to 
 		output_name : output_element (
 			

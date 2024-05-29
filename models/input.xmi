@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:ERD="http://www.example.org/ERD">
+  <ERD:Entity xmi:id="_Order" name="Order">
+    <attributes xmi:type="ERD:Attribute" xmi:id="_orderId" name="orderId" type="int"/>
+    <attributes xmi:type="ERD:Attribute" xmi:id="_orderDate" name="orderDate" type="String"/>
+    <attributes xmi:type="ERD:Attribute" xmi:id="_customerId" name="customerId" type="int"/>
+    <attributes xmi:type="ERD:Attribute" xmi:id="_customerName" name="customerName" type="String"/>
+    <attributes xmi:type="ERD:Attribute" xmi:id="_customerAddress" name="customerAddress" type="String"/>
+  </ERD:Entity>
+  <ERD:Entity xmi:id="_Product" name="Product">
+    <attributes xmi:type="ERD:Attribute" xmi:id="_productId" name="productId" type="int"/>
+    <attributes xmi:type="ERD:Attribute" xmi:id="_productName" name="productName" type="String"/>
+    <attributes xmi:type="ERD:Attribute" xmi:id="_orderId_fk" name="orderId" type="int"/>
+  </ERD:Entity>
+</xmi:XMI>

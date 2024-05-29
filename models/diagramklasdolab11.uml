@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_qqELkBH3Ee-KOb_oedtJKA" name="diagramklasdolab11">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_qrZoUBH3Ee-KOb_oedtJKA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_sbcCkBH3Ee-KOb_oedtJKA" name="KlasaA">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0QXXcBH3Ee-KOb_oedtJKA" name="atrybut1" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KHA6oBH4Ee-KOb_oedtJKA" name="atrybut2">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_to0bsBH3Ee-KOb_oedtJKA" name="KlasaB">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_XAnqUBH4Ee-KOb_oedtJKA" name="atrybut1">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_deK8kBH4Ee-KOb_oedtJKA" name="IntToBool" concurrency="concurrent">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mxm20BH4Ee-KOb_oedtJKA" name="p">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_wnc6kBH4Ee-KOb_oedtJKA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_F1p9sBH5Ee-KOb_oedtJKA" memberEnd="_F1uPIBH5Ee-KOb_oedtJKA _F1vdQBH5Ee-KOb_oedtJKA" navigableOwnedEnd="_F1uPIBH5Ee-KOb_oedtJKA _F1vdQBH5Ee-KOb_oedtJKA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F1tBABH5Ee-KOb_oedtJKA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F1toEBH5Ee-KOb_oedtJKA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_F1uPIBH5Ee-KOb_oedtJKA" name="klasab" type="_to0bsBH3Ee-KOb_oedtJKA" association="_F1p9sBH5Ee-KOb_oedtJKA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MEnaUBH5Ee-KOb_oedtJKA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MEuvEBH5Ee-KOb_oedtJKA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_F1vdQBH5Ee-KOb_oedtJKA" name="klasaa" type="_sbcCkBH3Ee-KOb_oedtJKA" association="_F1p9sBH5Ee-KOb_oedtJKA"/>
+  </packagedElement>
+</uml:Model>

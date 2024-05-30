@@ -5,7 +5,7 @@
     <attributes name="name" type="String"/>
     <operations name="getName">
       <parameters name="id" type="Integer"/>
-      <returnType type="String"/>
+      <returnType>String</returnType>
     </operations>
   </entities>
   <entities name="Address">

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmf:PMF_Map
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pmf="http://www.example.org/pmf"
+    xsi:schemaLocation="http://www.example.org/pmf MpMapsMetamodel2.ecore"
+    FileName="test filename">
+  <pmf_map_sections
+      Name="Section 1">
+    <pmf_map_pois/>
+    <pmf_map_attributes
+        ID="1"
+        Name="City"
+        Value="TestCityName"/>
+  </pmf_map_sections>
+  <pmf_map_sections
+      Name="Section 2">
+    <pmf_map_attributes
+        Name=""
+        Value="Test"
+        Key=""/>
+    <pmf_map_attributes
+        Value="Wroclaw"
+        Key="City"/>
+  </pmf_map_sections>
+</pmf:PMF_Map>

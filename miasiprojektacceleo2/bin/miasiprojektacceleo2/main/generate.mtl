@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/pmf')]
+
+
+[template public generateElement(aPMF_Map : PMF_Map)]
+[comment @main/]
+[file ('TEST.TXT', false, 'UTF-8')]
+aaa 
+[aPMF_Map.FileName/]
+[/file]
+[/template]

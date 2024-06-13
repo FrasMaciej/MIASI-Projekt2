@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/pmf')]
+
+
+[template public generateElement(aPMF_Map : PMF_Map)]
+[comment @main/]
+[file (aPMF_Map.ID.toString(), false, 'UTF-8')]
+Generatef file for pmf_map [aPMF_Map.FileName/]
+[aPMF_Map.pmf_map_sections.toString()/]
+[/file]
+[/template]

@@ -17,10 +17,12 @@
   <pmf_map_sections
       Name="Section 2">
     <pmf_map_attributes
+        ID="2"
         Name=""
         Value="Test"
         Key=""/>
     <pmf_map_attributes
+        ID="3"
         Value="Wroclaw"
         Key="City"/>
   </pmf_map_sections>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pmf" nsURI="http://www.example.org/pmf" nsPrefix="pmf">
+  <eClassifiers xsi:type="ecore:EClass" name="PMF_Map">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="FileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Bytes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_sections" lowerBound="1"
+        upperBound="-1" eType="#//PMF_Map_Section" containment="true" eOpposite="#//PMF_Map_Section/pmf_map"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PMF_Map_Section">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="FileSectionNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_polylines" upperBound="-1"
+        eType="#//PMF_Map_Polyline" containment="true" eOpposite="#//PMF_Map_Polyline/pmf_map_sections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_polygons" upperBound="-1"
+        eType="#//PMF_Map_Polygon" containment="true" eOpposite="#//PMF_Map_Polygon/pmf_map_sections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_pois" upperBound="-1"
+        eType="#//PMF_Map_POI" containment="true" eOpposite="#//PMF_Map_POI/pmf_map_sections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_attributes" lowerBound="1"
+        upperBound="-1" eType="#//PMF_Map_Attribute" containment="true" eOpposite="#//PMF_Map_Attribute/pmf_map_sections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map" lowerBound="1"
+        eType="#//PMF_Map" eOpposite="#//PMF_Map/pmf_map_sections"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PMF_Map_Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="KeyIdx" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_sections" lowerBound="1"
+        eType="#//PMF_Map_Section" eOpposite="#//PMF_Map_Section/pmf_map_attributes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PMF_Map_POI">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Point" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="KeyIdx" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_sections" lowerBound="1"
+        eType="#//PMF_Map_Section" eOpposite="#//PMF_Map_Section/pmf_map_pois"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PMF_Map_Polygon">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Polygon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="KeyIdx" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_sections" lowerBound="1"
+        eType="#//PMF_Map_Section" eOpposite="#//PMF_Map_Section/pmf_map_polygons"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PMF_Map_Polyline">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Start_level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="End_level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="LineString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="KeyIdx" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pmf_map_sections" lowerBound="1"
+        eType="#//PMF_Map_Section" eOpposite="#//PMF_Map_Section/pmf_map_polylines"/>
+  </eClassifiers>
+</ecore:EPackage>

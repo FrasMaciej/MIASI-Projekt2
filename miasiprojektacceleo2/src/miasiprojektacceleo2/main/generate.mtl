@@ -1,11 +1,69 @@
-[comment encoding = UTF-8 /]
 [module generate('http://www.example.org/pmf')]
 
+[comment encoding = UTF-8 /]
 
-[template public generateElement(aPMF_Map : PMF_Map)]
-[comment @main/]
-[file ('TEST.TXT', false, 'UTF-8')]
-aaa 
-[aPMF_Map.FileName/]
+[template public generateElement(pmfMap : PMF_Map)]
+[comment @main /]
+[file ('output.txt', false, 'UTF-8')]
+-- SQL Insert Statements for PMF_Map
+[generatePMFMap(pmfMap)/]
+
+-- SQL Insert Statements for PMF_Map_Section
+[for (section : PMF_Map_Section | pmfMap.pmf_map_sections)]
+[generatePMFMapSection(section)/]
+[/for]
+
+-- SQL Insert Statements for PMF_Map_Attribute
+[for (section : PMF_Map_Section | pmfMap.pmf_map_sections)]
+    [for (attribute : PMF_Map_Attribute | section.pmf_map_attributes)]
+    [generatePMFMapAttribute(attribute, section)/]
+    [/for]
+[/for]
+
+-- SQL Insert Statements for PMF_Map_POI
+[for (section : PMF_Map_Section | pmfMap.pmf_map_sections)]
+    [for (poi : PMF_Map_POI | section.pmf_map_pois)]
+    [generatePMFMapPOI(poi, section)/]
+    [/for]
+[/for]
+
+-- SQL Insert Statements for PMF_Map_Polygon
+[for (section : PMF_Map_Section | pmfMap.pmf_map_sections)]
+    [for (polygon : PMF_Map_Polygon | section.pmf_map_polygons)]
+    [generatePMFMapPolygon(polygon, section)/]
+    [/for]
+[/for]
+
+-- SQL Insert Statements for PMF_Map_Polyline
+[for (section : PMF_Map_Section | pmfMap.pmf_map_sections)]
+    [for (polyline : PMF_Map_Polyline | section.pmf_map_polylines)]
+    [generatePMFMapPolyline(polyline, section)/]
+    [/for]
+[/for]
+
 [/file]
+[/template]
+
+[template public generatePMFMap(map : PMF_Map)]
+INSERT INTO PMF_Map (ID, FileName, Bytes, Description) VALUES ([map.ID/], '[map.FileName/]', '[map.Bytes/]', '[map.Description/]');
+[/template]
+
+[template public generatePMFMapSection(section : PMF_Map_Section)]
+INSERT INTO PMF_Map_Section (ID, Type, Name, FileSectionNumber, PMF_Map_ID) VALUES ([section.ID/], '[section.Type/]', '[section.Name/]', [section.FileSectionNumber/], [section.pmf_map.ID/]);
+[/template]
+
+[template public generatePMFMapAttribute(attribute : PMF_Map_Attribute, section : PMF_Map_Section)]
+INSERT INTO PMF_Map_Attribute (ID, Name, Value, Key, KeyIdx, PMF_Map_Section_ID) VALUES ([attribute.ID/], '[attribute.Name/]', '[attribute.Value/]', '[attribute.Key/]', [attribute.KeyIdx/], [section.ID/]);
+[/template]
+
+[template public generatePMFMapPOI(poi : PMF_Map_POI, section : PMF_Map_Section)]
+INSERT INTO PMF_Map_POI (ID, Name, Point, Key, KeyIdx, PMF_Map_Section_ID) VALUES ([poi.ID/], '[poi.Name/]', '[poi.Point/]', '[poi.Key/]', [poi.KeyIdx/], [section.ID/]);
+[/template]
+
+[template public generatePMFMapPolygon(polygon : PMF_Map_Polygon, section : PMF_Map_Section)]
+INSERT INTO PMF_Map_Polygon (ID, Name, Polygon, Key, KeyIdx, PMF_Map_Section_ID) VALUES ([polygon.ID/], '[polygon.Name/]', '[polygon.Polygon/]', '[polygon.Key/]', [polygon.KeyIdx/], [section.ID/]);
+[/template]
+
+[template public generatePMFMapPolyline(polyline : PMF_Map_Polyline, section : PMF_Map_Section)]
+INSERT INTO PMF_Map_Polyline (ID, Name, Start_level, End_level, LineString, Key, KeyIdx, PMF_Map_Section_ID) VALUES ([polyline.ID/], '[polyline.Name/]', [polyline.Start_level/], [polyline.End_level/], '[polyline.LineString/]', '[polyline.Key/]', [polyline.KeyIdx/], [section.ID/]);
 [/template]

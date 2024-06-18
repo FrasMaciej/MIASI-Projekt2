@@ -7,6 +7,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" output="bin" path="src"/>
-	<classpathentry kind="lib" path="MpMapsMetamodel2.ecore"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

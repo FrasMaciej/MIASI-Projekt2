@@ -13,7 +13,7 @@
 [generatePMFMapSection(section)/]
 [/for]
 
--- SQL Insert Statements for PMF_Map_Attribute
+-- SQL Insert Statements for PMF_Map_Attribute 
 [for (section : PMF_Map_Section | pmfMap.pmf_map_sections)]
     [for (attribute : PMF_Map_Attribute | section.pmf_map_attributes)]
     [generatePMFMapAttribute(attribute, section)/]
@@ -40,7 +40,6 @@
     [generatePMFMapPolyline(polyline, section)/]
     [/for]
 [/for]
-
 [/file]
 [/template]
 

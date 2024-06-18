@@ -53,7 +53,7 @@ INSERT INTO PMF_Map_Section (ID, Type, Name, FileSectionNumber, PMF_Map_ID) VALU
 INSERT INTO PMF_Map_Section (ID, Type, Name, FileSectionNumber, PMF_Map_ID) VALUES (49, 'ten', 'right', 47, 0);
 INSERT INTO PMF_Map_Section (ID, Type, Name, FileSectionNumber, PMF_Map_ID) VALUES (50, 'relate', 'occur', 86, 0);
 
--- SQL Insert Statements for PMF_Map_Attribute
+-- SQL Insert Statements for PMF_Map_Attribute 
     INSERT INTO PMF_Map_Attribute (ID, Name, Value, Key, KeyIdx, PMF_Map_Section_ID) VALUES (1, 'dog', 'color', 'maintain', 25, 1);
     INSERT INTO PMF_Map_Attribute (ID, Name, Value, Key, KeyIdx, PMF_Map_Section_ID) VALUES (2, 'fact', 'else', 'game', 13, 1);
     INSERT INTO PMF_Map_Attribute (ID, Name, Value, Key, KeyIdx, PMF_Map_Section_ID) VALUES (3, 'skill', 'plan', 'buy', 77, 1);
@@ -460,4 +460,3 @@ INSERT INTO PMF_Map_Section (ID, Type, Name, FileSectionNumber, PMF_Map_ID) VALU
     INSERT INTO PMF_Map_Polyline (ID, Name, Start_level, End_level, LineString, Key, KeyIdx, PMF_Map_Section_ID) VALUES (48, 'message', 8, 9, 'Re-engineered context-sensitive benchmark', 'read', 73, 48);
     INSERT INTO PMF_Map_Polyline (ID, Name, Start_level, End_level, LineString, Key, KeyIdx, PMF_Map_Section_ID) VALUES (49, 'hear', 1, 6, 'Profit-focused disintermediate workforce', 'century', 79, 49);
     INSERT INTO PMF_Map_Polyline (ID, Name, Start_level, End_level, LineString, Key, KeyIdx, PMF_Map_Section_ID) VALUES (50, 'beyond', 6, 2, 'Synergized responsive moderator', 'change', 80, 50);
-
